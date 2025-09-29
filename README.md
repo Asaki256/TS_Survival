@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Random Cat Image Generator 🐱
 
-## Getting Started
+ランダムな猫の画像を表示するシンプルなWebアプリケーションです。
 
-First, run the development server:
+## 特徴
+
+- ボタンをクリックするだけでランダムな猫の画像を表示
+- レスポンシブデザインで、スマートフォンからデスクトップまで対応
+- Next.js 15とTailwindCSSを使用したモダンな設計
+- TypeScriptで型安全性を確保
+
+## 技術スタック
+
+- **Framework**: [Next.js 15](https://nextjs.org) with App Router
+- **Language**: TypeScript
+- **Styling**: TailwindCSS v4
+- **Build Tool**: Turbopack（高速ビルド）
+- **API**: [The Cat API](https://thecatapi.com/) を使用
+
+## セットアップ
+
+### 必要な環境
+
+- Node.js 18.0以降
+- npm, yarn, pnpm, またはbun
+
+### インストールと実行
+
+1. リポジトリをクローンまたはダウンロード
+2. 依存関係をインストール:
+
+```bash
+npm install
+```
+
+3. 開発サーバーを起動:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. ブラウザで [http://localhost:3000](http://localhost:3000) を開く
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### その他のコマンド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 本番用ビルド
+npm run build
 
-## Learn More
+# 本番サーバー起動
+npm run start
 
-To learn more about Next.js, take a look at the following resources:
+# ESLintチェック
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## プロジェクト構成
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+random-cat/
+├── app/
+│   ├── cat-image.tsx     # 猫の画像コンポーネント
+│   ├── fetch-image.ts    # 画像取得ロジック
+│   ├── page.tsx          # メインページ
+│   └── layout.tsx        # レイアウト設定
+├── public/               # 静的ファイル
+└── package.json
+```
 
-## Deploy on Vercel
+## デプロイ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel（推奨）
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+1. Vercelアカウントにログイン
+2. GitHubリポジトリを接続
+3. 自動でデプロイが開始されます
+
+### その他のプラットフォーム
+
+- **Netlify**: `npm run build` で生成された `out` フォルダをデプロイ
+- **Cloudflare Pages**: GitHubリポジトリを接続してデプロイ
+
+## 貢献
+
+バグ報告や機能要望はIssueでお知らせください。プルリクエストも歓迎します！
+
+## ライセンス
+
+MIT License
