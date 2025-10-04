@@ -1,15 +1,16 @@
 "use server";
-import { CAT_API_KEY } from "./env";
+import { validateCatApiKey } from "./env";
 
 type Image = {
   url: string;
 };
 
 export async function fetchImage(): Promise<Image> {
+  const apiKey = validateCatApiKey();
   const res = await fetch(
     "https://api.thecatapi.com/v1/images/search",
     {
-      headers: { "x-api-key": CAT_API_KEY },
+      headers: { "x-api-key": apiKey },
     }
   );
   // json()により、レスポンスからオブジェクトを取得する。
